@@ -1,1 +1,46 @@
-<p>add-component works!</p>
+<div class="adicionar">
+    
+
+        <div class="container">
+            <label for="nome_produto">Nome do Produto</label>
+            <input type="text" id="nome_produto" class="form-control" required [(ngModel)]="produto.nome_produto" name="nome_produto"/>
+        </div>
+        <div class="container">
+            <label for="categoria">Numero da Categoria</label>
+            <input type="number" class="form-control" id="categoria" required [(ngModel)]="produto.categoria_id" name="categoria"/>
+        </div>
+        <div class="container">
+            <label for="quantidade_estoque">Quantidade em Estoque</label>
+            <input type="number" class="form-control" id="quantidade_estoque" required [(ngModel)]="produto.quantidade_estoque" name="quantidade_estoque"/>
+        </div>
+        <div class="container">
+            <label for="data_vencimento">Data de Vencimento</label>
+            <input type="date" class="form-control" id="data_vencimento" required [(ngModel)]="produto.data_vencimento" name="data_vencimento"/>
+        </div>
+        <div class="container2">
+            <div class="camposub ">
+                <div class="checkbox-container">
+                    <input type="checkbox" class="check" id="produto_perecivel" required [(ngModel)]="produto.produto_perecivel" name="produto_perecivel"/>
+                    <h6>Produto Perecivel</h6>
+                </div>
+            </div>
+
+            <div class="camposub">
+                <label for="valor_do_produto">Valor do Produto</label>
+                <input class="form-control" currencyMask [(ngModel)]="produto.valor_produto" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" name="valor_do_produto" />   
+            </div>
+        </div>
+        
+            <div class="container">   
+            <button (click)="saveproduto()" class="btn btn-success">Cadastrar</button>
+        </div>
+  
+        
+
+  
+  
+</div>
+<div *ngIf="submitted">
+  <h4>Tutorial was submitted successfully!</h4>
+  <button class="btn btn-success" (click)="novoProduto()">Add</button>
+</div>

@@ -1,0 +1,55 @@
+.adicionar{
+    margin-top: 5%;
+    width: 90vw;
+    margin-left: 5vw;
+    text-align: center;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+}
+input{
+    height: 5vh;
+}
+.container{
+    height: 80%;
+    width: 100%;
+   
+    margin-bottom: 4vh;
+    align-items: center;
+}
+.container2{
+    align-items: center;
+    height: 80%;
+    width: 100%;
+    justify-content:space-between;
+   padding: 0 10%;
+    margin-bottom:  4vh;
+    flex-direction: row;
+    display: flex;
+  
+}
+ .camposub{
+    height: 100%;
+    width: 45%;
+    
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 1vh;
+  
+}
+.check{
+    width: 10%;
+    height: 10vh;
+    margin-right: 2vh;
+    max-width: 35px;
+}
+.camposub h6{
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: medium;
+}
