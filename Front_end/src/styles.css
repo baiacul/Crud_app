@@ -1,18 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
-
+html{
+    width: 100vw;
+}
+html, body {
+    height: 100%;
+    max-width: 100vw;
+}
 body{
     background: whitesmoke;
     margin: 0;
     padding: 0;
+    display: block;
+    max-width: 100vw;
    
    
 }
 
 :root {
     --roxo: #865dff;
+    --rosa: #ffa3fd;
+    --rosa-escuro:#E384FF;
+    
   }
 
-  @media (min-width: 700px){
-
-  }
+ 

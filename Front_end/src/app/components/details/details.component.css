@@ -1,0 +1,77 @@
+.container{
+    display: block;
+    flex-direction: column;
+    padding: 0;
+    min-width: 90%
+    
+}
+.column{
+    display: flex;
+    padding-top: 2vw;
+    min-height: 20%;
+    padding-bottom: 2vw;
+    align-content: flex-start;
+    box-sizing: border-box;
+    flex-wrap:wrap;
+   
+ 
+}
+.column .columns{
+text-align: center;
+width: 25%;
+align-items: center;
+vertical-align: top;
+box-sizing: border-box;
+
+}
+.cor1{
+background-color: var(--rosa);
+}
+.cor2{
+    background-color: var(--rosa-escuro);
+
+}
+.nome{
+    width: 25%;
+    text-align: center;
+display: inline-block;
+align-items: center;
+vertical-align: top;
+}
+.columns-bottons{
+    width:  25%;
+    
+    display: block;
+}
+.columns-bottons button.edit {
+    color: white;
+    width: 60%;
+    margin-left: 5%;
+    height: 40%;
+    background: #190482;
+    border: none;
+    border-radius: 5Vw;
+}
+.columns-bottons button.delet {
+    width: 60%;
+    margin-left: 5%;
+    height: 40%;
+    margin-top: 10%;
+    background: red;
+    border: none;
+    border-radius: 5Vw;
+    color: white;
+}
+.columns-bottons button.extender{
+margin-left: 5%;
+border: none;
+background-color: rgba(134,93,255,1);
+border-radius: 3vw;
+}
+.block{
+    display: block;
+}
+
+@media (min-width:600px) {
+    
+}

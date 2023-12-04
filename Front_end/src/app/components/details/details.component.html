@@ -1,1 +1,39 @@
-<p>details works!</p>
+<div class="container">
+    <div *ngFor="let produto of produtos; let i = index">
+        <div class="column" [ngClass]="{'cor1': i % 2 === 0, 'cor2': i % 2 !== 0}">
+            <div class="nome block">
+                <h6>Nome:</h6>
+                <span>{{ produto.nome_produto }}</span>
+            </div>
+            <div class="columns block">
+                <h6>Quantidade:</h6>
+                <span>{{ produto.quantidade_estoque }}</span>
+            </div>
+            <div class="columns block">
+                <h6>Validade:</h6>
+                <span>{{ produto.data_vencimento | date:'dd/MM/yyyy' }}</span>
+            </div>
+            <div class="columns-bottons">
+                <button class="edit" (click)="edit(produto)">EDIT</button>
+                <button class="delet" (click)="delete(produto)">DELETE</button>
+                <button class="extender" (click)="extender(produto)">
+                    <i class="bi bi-arrow-bar-down"></i>
+                </button>
+            </div>
+             
+            <div *ngIf="aberto && produto_selecionado === produto.nome_produto" class="columns block">
+                 <h6>Categoria:</h6>
+                 <span>{{ produto.categoria_id }}</span>
+            </div>
+                <div *ngIf="aberto && produto_selecionado === produto.nome_produto" class="columns block">
+                    <h6>Perecivel:</h6>
+                    <i *ngIf="!produto.produto_perecivel" class="bi bi-x-lg"  alt="Não Perecível"></i>
+                    <i *ngIf="produto.produto_perecivel" class="bi bi-check2" alt="Perecível"></i>
+                </div>
+                <div *ngIf="aberto && produto_selecionado === produto.nome_produto" class="columns block">
+                    <h6>Valor:</h6>
+                    <span >R${{ produto.valor_produto }}</span>
+                </div>
+            </div>
+        </div>
+    </div>

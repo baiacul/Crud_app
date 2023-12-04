@@ -1,6 +1,6 @@
 <div class="adicionar">
     
-
+    <div *ngIf="!submitted">
         <div class="container">
             <label for="nome_produto">Nome do Produto</label>
             <input type="text" id="nome_produto" class="form-control" required [(ngModel)]="produto.nome_produto" name="nome_produto"/>
@@ -34,13 +34,13 @@
             <div class="container">   
             <button (click)="saveproduto()" class="btn btn-success">Cadastrar</button>
         </div>
+    </div>
   
         
-
-  
-  
 </div>
-<div *ngIf="submitted">
-  <h4>Tutorial was submitted successfully!</h4>
-  <button class="btn btn-success" (click)="novoProduto()">Add</button>
+<div class="confirmado" *ngIf="submitted">
+    <div class="container">
+        <h4>Produto adicionado com sucesso!</h4>
+        <button class="btn btn-success" (click)="novoProduto()">Adicionar mais 1</button>
+    </div>
 </div>
