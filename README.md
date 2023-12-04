@@ -25,6 +25,15 @@ configure esess campos com as informações do seu banco de dados:
   
 2.5- depois execute "php artisan migrate" para criar as tabelas no banco de dados ou se preferir crie manualmente
 
+2-6  execute no pgsql para criar algumas categorias       
+insert into categoria(nome_categoria){
+values
+('tóxico'),
+('obras'),
+('comida'),
+('mantimentos')
+}
+
 por ultimo execute "php artisan serve" para inciar o servidor pegue o link q ele vai gerar e guarda
 
 3-1 abre um terminal no Front_end e execute "npm install"
@@ -32,5 +41,7 @@ por ultimo execute "php artisan serve" para inciar o servidor pegue o link q ele
 3-2 abra o arquivo src/app/services/produtos.service.ts == const baseUrl = 'http://127.0.0.1:8000/api/produtos'; troque http://127.0.0.1:8000 pela url q voce copiou la do laravel
 
 3-3 execute o "ng serve" para iniciar o servidor entre no link mostrado;
+
+<h2>OBS utilize no campo de insersão de categoria os valores de 1 a 4 respectivos pelos valores adicionados no bd na categoria</h2>
 
 
