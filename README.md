@@ -1,5 +1,9 @@
 # Crud_app
 
+Precisa do postgresql
+Angular CLI
+Composer
+
 1 abra o postgresql e crie um database guarde as informacoes de conexao
 DB_HOST=localhost
   DB_PORT=5432
