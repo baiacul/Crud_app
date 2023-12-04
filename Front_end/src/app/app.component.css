@@ -1,1 +1,13 @@
 
+.adicionar {
+    background: green;
+    position: absolute;
+    height: 10vh;
+    width: 40vw;
+    left: 50%;  
+    bottom: 5%;  
+    transform: translateX(-50%);  
+    border: none;
+    color: white;
+    border-radius: 5vh;
+}

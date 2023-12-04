@@ -1,10 +1,9 @@
 <div class="barra_topo">
     <form>
         <div class="pesquisa">
-        
-            <input  type="text" placeholder="Nome do produto"> 
-            <button class="botao-busca"  type="submit" ><span class="bi bi-search"></span></button>
-            
+            <button class="botao_home" (click)="home()"><i class="bi bi-house"></i></button>
+            <input [(ngModel)]="nomeProduto" type="text" placeholder="Nome do produto" name="nomeProduto"> 
+            <button class="botao-busca" (click)="buscar()"  type="submit" ><span class="bi bi-search"></span></button>
         </div>
      </form>
 </div>

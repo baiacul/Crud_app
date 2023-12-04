@@ -1,4 +1,6 @@
-<app-barra-pesquisa-component>adada</app-barra-pesquisa-component>
+<app-barra-pesquisa-component (ativar_home)="ativar_home()" (produtobusca)="produto_busca($event)"></app-barra-pesquisa-component>
+<app-details (ativarEdit)="editar($event)" *ngIf="appList" ></app-details>
+<app-add-component *ngIf="appAdd"></app-add-component>
+<app-edit-component *ngIf="appEdit" [produtoSelecionado]="produtoSelecionado" (home)="ativar_home()"></app-edit-component>
 
-<app-details></app-details>
-
+<button *ngIf="addButton" class="adicionar" (click)="adicionar()">ADD NEW</button>

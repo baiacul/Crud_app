@@ -1,5 +1,5 @@
 <div class="container">
-    <div *ngFor="let produto of produtos; let i = index">
+    <div *ngFor="let produto of produtos; let i = index ">
         <div class="column" [ngClass]="{'cor1': i % 2 === 0, 'cor2': i % 2 !== 0}">
             <div class="nome block">
                 <h6>Nome:</h6>

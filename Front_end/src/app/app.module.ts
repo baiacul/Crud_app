@@ -10,6 +10,8 @@ import { InformacoesComponentComponent } from './components/informacoes-componen
 import { AddComponentComponent } from './components/add-component/add-component.component';
 import { DetailsComponent } from './components/details/details.component';
 import { CurrencyMaskConfig, CurrencyMaskModule, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask';
+import { EditComponentComponent } from './components/edit-component/edit-component.component';
+
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { CurrencyMaskConfig, CurrencyMaskModule, CURRENCY_MASK_CONFIG } from 'ng
     BarraPesquisaComponentComponent,
     InformacoesComponentComponent,
     AddComponentComponent,
-    DetailsComponent
+    DetailsComponent,
+    EditComponentComponent,
+    
   ],
   imports: [
     BrowserModule,

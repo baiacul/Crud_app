@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,OnInit, EventEmitter, Output,  } from '@angular/core';
+import { ProdutosService } from '../../services/produtos.service';
+import { Produtos } from '../../models/produtos.model';
+import { CommunicationService } from '../../communication.service';
+
 
 @Component({
   selector: 'app-barra-pesquisa-component',
@@ -7,4 +11,18 @@ import { Component } from '@angular/core';
 })
 export class BarraPesquisaComponentComponent {
 
+  nomeProduto: string = "";
+  @Output() ativar_home = new EventEmitter();
+  @Output() produtobusca = new EventEmitter<string>();
+
+  constructor(private communicationService: CommunicationService) {}
+
+  home(): void {
+    this.communicationService.enviarProdutoBusca('');
+    this.ativar_home.emit()
+  }
+
+  buscar(): void {
+    this.communicationService.enviarProdutoBusca(this.nomeProduto);
+  }
 }

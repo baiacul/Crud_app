@@ -2,8 +2,9 @@
 
 html{
     width: 100vw;
+   
 }
-html, body {
+body {
     height: 100%;
     max-width: 100vw;
 }
