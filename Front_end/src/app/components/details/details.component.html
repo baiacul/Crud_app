@@ -16,21 +16,21 @@
             <div class="columns-bottons">
                 <button class="edit" (click)="edit(produto)">EDIT</button>
                 <button class="delet" (click)="delete(produto)">DELETE</button>
-                <button class="extender" (click)="extender(produto)">
+                <button *ngIf="screenWidth <= 750" ng class="extender" (click)="extender(produto)">
                     <i class="bi bi-arrow-bar-down"></i>
                 </button>
             </div>
              
-            <div *ngIf="aberto && produto_selecionado === produto.nome_produto" class="columns block">
+            <div *ngIf="(aberto && produto_selecionado === produto.nome_produto) || (screenWidth >= 750)" class="columns block">
                  <h6>Categoria:</h6>
                  <span>{{ produto.categoria_id }}</span>
             </div>
-                <div *ngIf="aberto && produto_selecionado === produto.nome_produto" class="columns block">
+            <div *ngIf="(aberto && produto_selecionado === produto.nome_produto) || (screenWidth >= 750)" class="columns block">
                     <h6>Perecivel:</h6>
                     <i *ngIf="!produto.produto_perecivel" class="bi bi-x-lg"  alt="Não Perecível"></i>
                     <i *ngIf="produto.produto_perecivel" class="bi bi-check2" alt="Perecível"></i>
                 </div>
-                <div *ngIf="aberto && produto_selecionado === produto.nome_produto" class="columns block">
+                <div *ngIf="(aberto && produto_selecionado === produto.nome_produto) || (screenWidth >= 750)" class="columns block">
                     <h6>Valor:</h6>
                     <span >R${{ produto.valor_produto }}</span>
                 </div>

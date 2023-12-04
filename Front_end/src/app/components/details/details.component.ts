@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, ChangeDetectorRef, HostListener } from '@angular/core';
 import { Produtos } from '../../models/produtos.model';
 import { ProdutosService } from '../../services/produtos.service';
 import { Observable } from 'rxjs';
@@ -10,20 +10,23 @@ import { CommunicationService } from '../../communication.service';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
+  screenWidth: number = 0;
   @Input() produtobusca: string | undefined;
-
   produtos: Produtos[] = [];
   atualizacao: boolean = false; // Variável de controle
-
   aberto = false;
   produto_selecionado: any = null;
-
   constructor(
     private produtoService: ProdutosService,
     private communicationService: CommunicationService
-  ) {}
+  ) { }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.screenWidth = window.innerWidth;
+  }
   ngOnInit(): void {
+    this.getScreenWidth();
     this.AtualizarProdutos();
     this.communicationService.produtoBusca$.subscribe((termo) => {
       if (termo) {
@@ -79,9 +82,12 @@ export class DetailsComponent implements OnInit {
       produto_perecivel: produto.produto_perecivel,
     };
     this.ativarEdit.emit(data);
-    
+
+  }
+  getScreenWidth() {
+    this.screenWidth = window.innerWidth;
   }
   @Output() ativarEdit = new EventEmitter<Produtos>();
 }
 
-  
+
