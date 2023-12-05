@@ -18,7 +18,7 @@ DB_HOST=localhost
 
 2.3- Entre na pasta do back end com o comando cd Back_end e execute o comando  "composer install" para instalar as dependencias do composer
 
-2.4- "cp .env.example .env" para criar a conexao com o banco de dados {
+2.4- "copy .env.example .env" para criar a conexao com o banco de dados {
 configure esess campos com as informações do seu banco de dados:
   DB_CONNECTION=pgsql
   DB_HOST=localhost
@@ -29,8 +29,9 @@ configure esess campos com as informações do seu banco de dados:
   
 2.5- depois execute "php artisan migrate" para criar as tabelas no banco de dados ou se preferir crie manualmente
 
-2-6  execute no pgsql para criar algumas categorias       
-insert into categoria(nome_categoria){
+2-6  execute no pgsql para criar algumas categorias     
+{
+insert into categoria(nome_categoria)
 values
 ('tóxico'),
 ('obras'),
